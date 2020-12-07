@@ -85,6 +85,27 @@ const App = () => {
     }
   }
 
+  const deleteItem = (id) => {
+		let items = this.state.items;
+		//let item = items[id].name;
+
+		items.splice(id, 1);
+    /*
+		if (window.confirm("Would you like to remove this image?")) {
+			this.setState({
+				expenses: [...expenses],
+				editExpenseID: ""
+			})
+		}
+    */
+    this.setState({
+      items: [...items],
+      //editExpenseID: ""
+    })
+
+		this.saveItems();
+  }
+
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -109,7 +130,11 @@ const App = () => {
           }}
         />
 
-        <Stack.Screen name="Item Details" component={ItemDetails} />
+        <Stack.Screen 
+          name="Item Details" 
+          component={ItemDetails} 
+          delete={deleteItem}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
