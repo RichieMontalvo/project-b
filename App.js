@@ -1,3 +1,6 @@
+
+// ### IMPORT STATEMENTS ###
+
 import React, { useState, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -14,20 +17,27 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import ItemList from './components/ItemList';
 import ItemDetails from './components/ItemDetails';
 
+// * Navigator *
 const Stack = createStackNavigator();
+
+// ### APP ###
 
 const App = () => {
 
+  // * Permissions *
   const [cameraPermission, askForCameraPermission] = Permissions.usePermissions(Permissions.CAMERA, {ask: true});
   const [cameraRollPermission, askForCameraRollPermission] = Permissions.usePermissions(Permissions.CAMERA_ROLL, {ask: true});
 
+  // * State Hook *
   const [items, setItems] = useState([]);
 
+  // * Effect Hook *
   useEffect ( () => {
     if (items.length != 0)
     storeData(items);
   });
 
+  // Stores new item data
   const storeData = async (items) => {
     try {
       const json = JSON.stringify(items);
@@ -38,6 +48,7 @@ const App = () => {
     }
   }
 
+  // You can pick images from camera roll
   const pickPhoto = async () => {
     if (cameraRollPermission.status == 'granted') {
       let result = await ImagePicker.launchImageLibraryAsync({
@@ -59,6 +70,7 @@ const App = () => {
     }
   }
 
+  // You can take a photo
   const takePhoto = async () => {
     if (cameraPermission.status == 'granted') {
       let result = await ImagePicker.launchCameraAsync({
@@ -85,27 +97,12 @@ const App = () => {
     }
   }
 
-  const deleteItem = (id) => {
-		let items = this.state.items;
-		//let item = items[id].name;
-
-		items.splice(id, 1);
-    /*
-		if (window.confirm("Would you like to remove this image?")) {
-			this.setState({
-				expenses: [...expenses],
-				editExpenseID: ""
-			})
-		}
-    */
-    this.setState({
-      items: [...items],
-      //editExpenseID: ""
-    })
-
-		this.saveItems();
+  // Deletes specified item
+  const deleteItem = () => {
+		// nothing here yet
   }
 
+  // * JSX *
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -140,6 +137,8 @@ const App = () => {
   );
 }
 export default App;
+
+// ### STYLESHEET ###
 
 const styles = StyleSheet.create({
   buttons: {

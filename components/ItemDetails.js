@@ -1,15 +1,23 @@
+
+// ### IMPORT STATMENTS
+
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Button, Image } from 'react-native';
 
+// ### APP ###
+
 const ItemDetails = ({ navigation, route }) => {
 
+  // passes name and image data to this route
   const { name, image } = route.params;
 
+  // goes back to item list screen
   const goToList = () => {
     navigation.navigate('Item List');
   }
 
+  // * JSX *
   return (
     <View style={styles.container}>
       <Image style={styles.image} source={{ uri: 'data:image/jpeg;base64,' + image }} />
@@ -24,6 +32,8 @@ const ItemDetails = ({ navigation, route }) => {
   );
 }
 export default ItemDetails;
+
+// ### STYLESHEET ###
 
 const styles = StyleSheet.create({
   container: {

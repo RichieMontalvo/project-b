@@ -1,18 +1,26 @@
+
+// ### IMPORT STATEMENTS ###
+
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, TouchableOpacity, Image } from 'react-native';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+// ### APP ###
+
 const ItemList = ({ route, navigation }) => {
 
+  // * State Hook *
   const [items, setItems] = useState([]);
 
+  // * Effect Hook *
   useEffect( () => {
     //console.log(items);
     getData();
   })
 
+  // retrieves stored data if it exists
   const getData = async () => {
     try {
       const jsonValue = await AsyncStorage.getItem('@items');
@@ -25,10 +33,12 @@ const ItemList = ({ route, navigation }) => {
     }
   }
 
+  // takes you to the details screen
   const goToDetails = (item) => {
     navigation.navigate('Item Details', {name: item.name, image: item.image});
   }
 
+  // defines the cell that holds the image
   const itemCell = ( item, index ) => (
     <TouchableOpacity 
       style={styles.cell}
@@ -39,6 +49,7 @@ const ItemList = ({ route, navigation }) => {
     </TouchableOpacity>
   )
 
+  // * JSX *
   return (
     <SafeAreaView style={styles.grid}>
       <ScrollView 
@@ -57,6 +68,8 @@ const ItemList = ({ route, navigation }) => {
   );
 }
 export default ItemList;
+
+// ### STYLESHEET ###
 
 const styles = StyleSheet.create({
   container: {
