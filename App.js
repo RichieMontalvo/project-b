@@ -125,7 +125,6 @@ const App = () => {
         <Stack.Screen 
           name="Item Details" 
           component={ItemDetails} 
-          delete={deleteItem}
         />
       </Stack.Navigator>
     </NavigationContainer>
