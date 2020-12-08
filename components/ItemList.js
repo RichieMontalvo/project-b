@@ -32,6 +32,17 @@ const ItemList = ({ route, navigation }) => {
       console.log(e);
     }
   }
+  
+  // Deletes specified item
+  const deleteItem = async () => {
+		try {
+      await AsyncStorage.removeItem('@items')
+    } catch(e) {
+      // remove error
+    }
+  
+    console.log('Done.')
+  }
 
   // takes you to the details screen
   const goToDetails = (item) => {
@@ -42,7 +53,7 @@ const ItemList = ({ route, navigation }) => {
   const itemCell = ( item, index ) => (
     <TouchableOpacity 
       style={styles.cell}
-      onPress={() => goToDetails(item)}
+      onPress={() => /*goToDetails(item)*/ deleteItem()}
       key={index}
     >
       <Image style={styles.image} source={{ uri: 'data:image/jpeg;base64,' + item.image }} />

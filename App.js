@@ -97,11 +97,6 @@ const App = () => {
     }
   }
 
-  // Deletes specified item
-  const deleteItem = () => {
-		// nothing here yet
-  }
-
   // * JSX *
   return (
     <NavigationContainer>
