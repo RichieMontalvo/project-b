@@ -40,7 +40,6 @@ const ItemList = ({ route, navigation }) => {
     } catch(e) {
       // remove error
     }
-  
     console.log('Done.')
   }
 
@@ -53,7 +52,7 @@ const ItemList = ({ route, navigation }) => {
   const itemCell = ( item, index ) => (
     <TouchableOpacity 
       style={styles.cell}
-      onPress={() => /*goToDetails(item)*/ deleteItem()}
+      onPress={() =>/*goToDetails(item)*/ deleteItem()}
       key={index}
     >
       <Image style={styles.image} source={{ uri: 'data:image/jpeg;base64,' + item.image }} />

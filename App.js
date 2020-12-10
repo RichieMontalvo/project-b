@@ -37,7 +37,7 @@ const App = () => {
     storeData(items);
   });
 
-  // Stores new item data
+  // Stores data as JSON string
   const storeData = async (items) => {
     try {
       const json = JSON.stringify(items);
@@ -46,6 +46,31 @@ const App = () => {
     catch (e) {
       console.log(e)
     }
+  }
+
+  // clears all asyncstorage data
+  const clearAll = async () => {
+    try {
+      await AsyncStorage.clear()
+    } catch(e) {
+      // clear error
+    }
+  
+    console.log('Done.')
+  }  
+
+  // returns all keys
+  const getAllKeys = async () => {
+    let keys = []
+    try {
+      keys = await AsyncStorage.getAllKeys()
+    } catch(e) {
+      // read key error
+    }
+  
+    console.log(keys)
+    // example console.log result:
+    // ['@MyApp_user', '@MyApp_key']
   }
 
   // You can pick images from camera roll
@@ -107,6 +132,16 @@ const App = () => {
           options={{
             headerRight: () => (
               <View style={styles.buttons}>
+                <Button
+                  title="Clear"
+                  onPress={clearAll}
+                />
+
+                <Button
+                  title="Get Keys"
+                  onPress={getAllKeys}
+                />
+
                 <Button 
                   title="Camera"
                   onPress={takePhoto}
