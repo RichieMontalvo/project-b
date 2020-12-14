@@ -146,6 +146,11 @@ const App = () => {
             headerRight: () => (
               <View style={styles.buttons}>
                 <Button
+                  title="Items"
+                  onPress={() => {console.log(items)}}
+                />
+
+                <Button
                   title="Clear"
                   onPress={clearAll}
                 />
