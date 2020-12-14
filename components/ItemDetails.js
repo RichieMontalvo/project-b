@@ -10,7 +10,7 @@ import { StyleSheet, Text, View, Button, Image } from 'react-native';
 const ItemDetails = ({ navigation, route }) => {
 
   // passes name and image data to this route
-  const { name, image } = route.params ?? {image: null, name: null, location: null, notes: null};
+  const { image, name, location, notes } = route.params ?? {image: null, name: null, location: null, notes: null};
 
   // goes back to item list screen
   const goToList = () => {
@@ -28,6 +28,10 @@ const ItemDetails = ({ navigation, route }) => {
 
       <Button title="Go to Item List" 
               onPress={goToList}
+      />
+
+      <Button title="Console Log" 
+              onPress={() => {console.log(name)}}
       />
       
       <StatusBar style="auto" />
