@@ -29,7 +29,13 @@ const App = () => {
   const [cameraRollPermission, askForCameraRollPermission] = Permissions.usePermissions(Permissions.CAMERA_ROLL, {ask: true});
 
   // * State Hook *
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState([
+    { 
+      id: null,
+      name: null,
+      image: null
+    }
+  ]);
 
   // * Effect Hook *
   useEffect ( () => {

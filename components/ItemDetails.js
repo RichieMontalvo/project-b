@@ -10,7 +10,7 @@ import { StyleSheet, Text, View, Button, Image } from 'react-native';
 const ItemDetails = ({ navigation, route }) => {
 
   // passes name and image data to this route
-  const { name, image } = route.params;
+  const { name, image } = route.params ?? {name : null, image : null};
 
   // goes back to item list screen
   const goToList = () => {
