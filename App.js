@@ -31,9 +31,8 @@ const App = () => {
   // * State Hook *
   const [items, setItems] = useState([
     { 
-      id: null,
-      name: null,
       image: null,
+      name: null,
       location: null,
       notes: null,
     }
@@ -93,8 +92,10 @@ const App = () => {
       });
       if (result.base64) {
         const item = {
-          id,
           image: result.base64,
+          name: null,
+          location: null,
+          notes: null
         }
         setItems([...items, item]);
       }
@@ -119,8 +120,10 @@ const App = () => {
         if (cameraRollPermission.status == 'granted') {
           MediaLibrary.saveToLibraryAsync(result.uri);
           const item = {
-            id,
             image: result.base64,
+            name: null,
+            location: null,
+            notes: null
           }
           setItems([...items, item]);
         }
