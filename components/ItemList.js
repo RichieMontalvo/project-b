@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
   },
   image: {
-    width: 110,
-    height: 110,
+    width: 115,
+    height: 115,
   }
 });
