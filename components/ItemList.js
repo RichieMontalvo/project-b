@@ -3,7 +3,7 @@
 
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
-import { SafeAreaView, ScrollView, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet, TouchableOpacity, Image, Button } from 'react-native';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -45,7 +45,7 @@ const ItemList = ({ route, navigation }) => {
 
   // takes you to the details screen
   const goToDetails = (item) => {
-    navigation.navigate('Item Details', {name: item.name, image: item.image});
+    navigation.navigate('Item Details', {image: item.image, name: item.name, location: item.location, notes: item.notes});
   }
 
   // defines the cell that holds the image
@@ -72,6 +72,10 @@ const ItemList = ({ route, navigation }) => {
           )
         }
       </ScrollView>
+
+      <Button title="console log"
+              onPress={() => {console.log(items)}}
+      />
 
       <StatusBar style="auto" />
     </SafeAreaView>
