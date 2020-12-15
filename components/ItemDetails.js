@@ -71,6 +71,8 @@ const styles = StyleSheet.create({
     height: 400,
     resizeMode: 'cover',
     marginBottom: 10,
+    borderWidth: 1,
+    borderColor: '#FF0000',
   },
   input: {
     borderWidth: 2,

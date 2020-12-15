@@ -102,6 +102,8 @@ const styles = StyleSheet.create({
   cell: {
     width: 115,
     height: 115,
+    borderWidth: 1,
+    borderColor: '#FF0000',
   },
   row: {
     flex: 1,
