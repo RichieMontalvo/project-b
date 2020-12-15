@@ -157,20 +157,6 @@ const App = () => {
           options={{
             headerRight: () => (
               <View style={styles.buttons}>
-                <Button title="Length"
-                  onPress={() => {console.log(items.length)}}
-                />
-                
-                <Button
-                  title="Items"
-                  onPress={() => {console.log(items)}}
-                />
-
-                <Button
-                  title="Clear"
-                  onPress={clearAll}
-                />
-
                 <Button 
                   title="Camera"
                   onPress={takePhoto}
