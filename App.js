@@ -14,6 +14,7 @@ import * as MediaLibrary from 'expo-media-library';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+import Home from './components/Home';
 import ItemList from './components/ItemList';
 import ItemDetails from './components/ItemDetails';
 
@@ -135,17 +136,28 @@ const App = () => {
     }
   }
 
+  const deleteFirstItem = async () => {
+    console.log(items[0])
+
+    items.splice(0, 1)
+  }
+
   // * JSX *
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen 
+          name="Home" 
+          component={Home}
+        />
+
         <Stack.Screen 
           name="Item List" 
           component={ItemList} 
           options={{
             headerRight: () => (
               <View style={styles.buttons}>
-                <Button title="console log"
+                <Button title="Length"
                   onPress={() => {console.log(items.length)}}
                 />
                 
@@ -177,6 +189,16 @@ const App = () => {
         <Stack.Screen 
           name="Item Details" 
           component={ItemDetails} 
+          options={{
+            headerRight: () => (
+              <View style={styles.buttons}>
+                <Button title="Delete"
+                  onPress={deleteFirstItem}
+                />
+                
+              </View>
+            )
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
