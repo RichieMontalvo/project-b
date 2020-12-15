@@ -1,9 +1,11 @@
 
-// ### IMPORT STATMENTS
+// ### IMPORT STATEMENTS ###
 
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, Button, Image } from 'react-native';
+
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // ### APP ###
 
