@@ -33,9 +33,9 @@ const App = () => {
   const [items, setItems] = useState([
     { 
       image: null,
-      name: null,
-      location: null,
-      notes: null,
+      name: "Name",
+      location: "Location",
+      notes: "Notes",
     }
   ]);
 
@@ -158,9 +158,15 @@ const App = () => {
           options={{
             headerRight: () => (
               <View style={styles.buttons}>
+                <Button
+                  title="Array"
+                  onPress={() => {console.log(items)}}
+                />
+
                 <Button 
                   title="Camera"
                   onPress={takePhoto}
+                  buttonStyle={styles.libraryButton}
                 />
 
                 <Button 
