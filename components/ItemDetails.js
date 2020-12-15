@@ -3,7 +3,7 @@
 
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, Button, Image } from 'react-native';
+import { StyleSheet, Text, View, Button, Image, TextInput } from 'react-native';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -24,17 +24,20 @@ const ItemDetails = ({ navigation, route }) => {
     <View style={styles.container}>
       <Image style={styles.image} source={{ uri: 'data:image/jpeg;base64,' + image }} />
 
-      <Text style={styles.title}>
-        {name}
-      </Text>
+      <TextInput 
+        style={styles.input}
+        value={name}
+      />
 
-      <Text style={styles.title}>
-        {location}
-      </Text>
+      <TextInput 
+        style={styles.input}
+        value={location}
+      />
 
-      <Text style={styles.title}>
-        {notes}
-      </Text>
+      <TextInput 
+        style={styles.input}
+        value={notes}
+      />
 
       <Button title="Go to Item List" 
               onPress={goToList}
@@ -69,4 +72,9 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
     marginBottom: 10,
   },
+  input: {
+    borderWidth: 2,
+    borderColor: '#808080',
+    width: '100%',
+  }
 });
