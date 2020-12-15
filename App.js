@@ -145,6 +145,10 @@ const App = () => {
           options={{
             headerRight: () => (
               <View style={styles.buttons}>
+                <Button title="console log"
+                  onPress={() => {console.log(items.length)}}
+                />
+                
                 <Button
                   title="Items"
                   onPress={() => {console.log(items)}}
@@ -153,11 +157,6 @@ const App = () => {
                 <Button
                   title="Clear"
                   onPress={clearAll}
-                />
-
-                <Button
-                  title="Get Keys"
-                  onPress={getAllKeys}
                 />
 
                 <Button 

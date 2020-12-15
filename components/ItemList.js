@@ -73,10 +73,6 @@ const ItemList = ({ route, navigation }) => {
         }
       </ScrollView>
 
-      <Button title="console log"
-              onPress={() => {console.log(items)}}
-      />
-
       <StatusBar style="auto" />
     </SafeAreaView>
   );
