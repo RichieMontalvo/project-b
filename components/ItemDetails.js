@@ -28,6 +28,14 @@ const ItemDetails = ({ navigation, route }) => {
         {name}
       </Text>
 
+      <Text style={styles.title}>
+        {location}
+      </Text>
+
+      <Text style={styles.title}>
+        {notes}
+      </Text>
+
       <Button title="Go to Item List" 
               onPress={goToList}
       />
