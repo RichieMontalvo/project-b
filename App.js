@@ -136,6 +136,7 @@ const App = () => {
     }
   }
 
+  // Deletes first item in the array
   const deleteFirstItem = async () => {
     console.log(items[0])
 

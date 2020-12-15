@@ -42,10 +42,6 @@ const ItemDetails = ({ navigation, route }) => {
       <Button title="Go to Item List" 
               onPress={goToList}
       />
-
-      <Button title="Console Log" 
-              onPress={() => {console.log(name)}}
-      />
       
       <StatusBar style="auto" />
     </View>
