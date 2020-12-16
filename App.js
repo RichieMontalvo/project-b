@@ -36,6 +36,7 @@ const App = () => {
       name: "Name",
       location: "Location",
       notes: "Notes",
+      date: "Date",
     }
   ]);
 
@@ -96,7 +97,8 @@ const App = () => {
           image: result.base64,
           name: null,
           location: null,
-          notes: null
+          notes: null,
+          date: null,
         }
         setItems([...items, item]);
       }
@@ -124,7 +126,8 @@ const App = () => {
             image: result.base64,
             name: null,
             location: null,
-            notes: null
+            notes: null,
+            date: null,
           }
           setItems([...items, item]);
         }

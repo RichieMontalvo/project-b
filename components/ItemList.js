@@ -45,7 +45,7 @@ const ItemList = ({ route, navigation }) => {
 
   // takes you to the details screen
   const goToDetails = (item) => {
-    navigation.navigate('Item Details', {image: item.image, name: item.name, location: item.location, notes: item.notes});
+    navigation.navigate('Item Details', {image: item.image, name: item.name, location: item.location, notes: item.notes, date: item.date});
   }
 
   // defines the cell that holds the image

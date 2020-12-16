@@ -12,7 +12,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const ItemDetails = ({ navigation, route }) => {
 
   // passes name and image data to this route
-  let { image, name, location, notes } = route.params ?? {image: null, name: null, location: null, notes: null};
+  let { image, name, location, notes, date } = route.params ?? {image: null, name: null, location: null, notes: null, date: null};
 
   // goes back to item list screen
   const goToList = () => {
@@ -37,6 +37,11 @@ const ItemDetails = ({ navigation, route }) => {
       <TextInput 
         style={styles.input}
         value={notes}
+      />
+
+      <TextInput 
+        style={styles.input}
+        value={date}
       />
 
       <Button title="Go to Item List" 
